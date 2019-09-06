@@ -13,7 +13,8 @@ class DistributionSales {
     val distSale = spark.sql("select st.product_id, product_type, sum(st.total_quantity)" +
         "from sales st join product pt on st.product_id=pt.product_id group by st.product_id,product_type"
 }
-
+}
 object  DistributionSales {
+
   def apply(): DistributionSales = new DistributionSales()
 }
